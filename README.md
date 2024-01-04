@@ -1,5 +1,5 @@
 # NeoVim Configuration
-Place in ~/.config/nvim folder
+Clone repository to  ~/.config/nvim folder
 
 ## Links
 * [Lazy Packagage Manager](https://github.com/folke/lazy.nvim)
