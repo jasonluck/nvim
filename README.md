@@ -9,3 +9,5 @@ Clone repository to  ~/.config/nvim folder
 * [Mason](https://github.com/williamboman/mason-lspconfig.nvim) Language Server processing
 * [Neo-tree]() File browser
     * [Neo-tree Recipes](https://github.com/nvim-neo-tree/neo-tree.nvim/wiki/Recipes)
+* [None-ls](https://github.com/nvimtools/none-ls.nvim?tab=readme-ov-file) Code formatting and linting
+    * [List of formatters](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md)
