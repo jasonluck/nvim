@@ -6,7 +6,16 @@ return {
 			local config = require("nvim-treesitter.configs")
 			config.setup({
 				auto_install = true,
-				ensure_installed = { "lua", "hcl", "yaml", "terraform" },
+				ensure_installed = {
+					"lua",
+					"hcl",
+					"yaml",
+					"terraform",
+					"bash",
+					"markdown",
+					"vim",
+					"json",
+				},
 				highlight = { enable = true },
 				indent = { enable = true },
 			})
