@@ -12,6 +12,7 @@ return {
 	},
 	config = function()
 		local wk = require("which-key")
+		local harpoon = require("harpoon")
 
 		-- File commands
 		wk.register({
@@ -21,16 +22,49 @@ return {
 			["<leader>fn"] = { "<cmd>enew<cr>", "New file" },
 			["<leader>ft"] = { "<cmd>Neotree filesystem reveal left<cr>", "Open filetree" },
 			["<leader>fb"] = { "<cmd>Neotree buffers reveal float<cr>", "Open buffers" },
-		})
-
-		local harpoon = require("harpoon")
-		wk.register({
-			["<C-e>"] = {
+			["<leader>fh"] = {
 				function()
 					harpoon.ui:toggle_quick_menu(harpoon:list())
 				end,
-				"List harpooned files",
+				"Find harpooned files",
 			},
+		})
+
+		-- Code commands
+		wk.register({
+			["<leader>c"] = { name = "+code" },
+			["<leader>ch"] = { vim.lsp.buf.hover, "Show docs" },
+			["<leader>cf"] = { vim.lsp.buf.format, "Format File" },
+			["<leader>cd"] = { vim.lsp.buf.definition, "Show definition" },
+			["<leader>cr"] = { vim.lsp.buf.references, "Show references" },
+			["<leader>ca"] = { vim.lsp.buf.code_action, "Code Actions" },
+		})
+
+		-- Git commands
+		wk.register({
+			["<leader>g"] = { name = "+git" },
+			["<leader>gp"] = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk" },
+			["<leader>gd"] = { "<cmd>Gitsigns diffthis<cr>", "Diff file" },
+			["<leader>gt"] = { name = "+toggle" },
+			["<leader>gtd"] = { "<cmd>Gitsigns toggle_deleted<cr>", "Toggle deleted" },
+			["<leader>gtb"] = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle line blame" },
+		})
+
+		-- Navigate vim panes better
+		wk.register({
+			["<C-k>"] = { "<cmd>wincmd k<CR>", "Navigate to pane above" },
+			["<C-j>"] = { "<cmd>wincmd j<CR>", "Navigate to pane below" },
+			["<C-h>"] = { "<cmd>wincmd h<CR>", "Navigate to pane left" },
+			["<C-l>"] = { "<cmd>wincmd l<CR>", "Navigate to pane right" },
+		})
+
+		-- Misc
+		wk.register({
+			["<leader>h"] = { "<cmd>nohlsearch<cr>", "Remove search highlighting" },
+		})
+
+		-- Harpoon Keymaps
+		wk.register({
 			["<leader>a"] = {
 				function()
 					harpoon:list():append()

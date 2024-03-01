@@ -11,14 +11,6 @@ vim.opt.breakindent = true
 -- Map leader key to Space
 vim.g.mapleader = " "
 
--- Navigate vim panes better
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
-
-vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
-
 -- Line numbers and Relative line numbers
 vim.wo.number = true
 vim.wo.relativenumber = true
