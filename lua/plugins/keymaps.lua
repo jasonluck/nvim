@@ -38,7 +38,17 @@ return {
 			["<leader>cd"] = { vim.lsp.buf.definition, "Show definition" },
 			["<leader>cr"] = { vim.lsp.buf.references, "Show references" },
 			["<leader>ca"] = { vim.lsp.buf.code_action, "Code Actions" },
+			["<leader>cc"] = { name = "+comment" },
+			["<leader>ccl"] = { "<Plug>(comment_toggle_linewise_current)", "Comment line" },
+			["<leader>ccb"] = { "<Plug>(comment_toggle_blockwise_current)", "Comment block" },
 		})
+
+		wk.register({
+			["<leader>c"] = { name = "+code" },
+			["<leader>cc"] = { name = "+comment" },
+			["<leader>ccl"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment line" },
+			["<leader>ccb"] = { "<Plug>(comment_toggle_blockwise_visual)", "Comment block" },
+		}, { mode = "v" })
 
 		-- Git commands
 		wk.register({
