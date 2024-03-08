@@ -1,6 +1,10 @@
 # NeoVim Configuration
 Clone repository to  ~/.config/nvim folder
 
+## Improvements
+TODO: Setup Go LSP
+TODO: Setup Java LSP
+
 ## Links
 * [Lazy Packagage Manager](https://github.com/folke/lazy.nvim)
 * [Catppuccin Color Theme](https://github.com/catppuccin/nvim)

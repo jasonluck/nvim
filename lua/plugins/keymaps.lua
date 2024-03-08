@@ -19,6 +19,7 @@ return {
 			["<leader>f"] = { name = "+file" },
 			["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find File" },
 			["<leader>fg"] = { "<cmd>Telescope live_grep<cr>", "Grep Files" },
+			["<leader>fd"] = { "<cmd>Telescope diagnostics<cr>", "Find Code Diagnostics" },
 			["<leader>fn"] = { "<cmd>enew<cr>", "New file" },
 			["<leader>ft"] = { "<cmd>Neotree filesystem reveal left<cr>", "Open filetree" },
 			["<leader>fb"] = { "<cmd>Neotree buffers reveal float<cr>", "Open buffers" },
@@ -35,16 +36,26 @@ return {
 			["<leader>c"] = { name = "+code" },
 			["<leader>ch"] = { vim.lsp.buf.hover, "Show docs" },
 			["<leader>cf"] = { vim.lsp.buf.format, "Format File" },
-			["<leader>cd"] = { vim.lsp.buf.definition, "Show definition" },
-			["<leader>cr"] = { vim.lsp.buf.references, "Show references" },
+			["<leader>cd"] = { "<cmd>Telescope lsp_definitions<cr>", "Show definition" },
+			["<leader>cr"] = { "<cmd>Telescope lsp_references<cr>", "Show references" },
 			["<leader>ca"] = { vim.lsp.buf.code_action, "Code Actions" },
+			["<leader>ct"] = { require("jdtls").test_class, "Test Class" },
 			["<leader>cc"] = { name = "+comment" },
 			["<leader>ccl"] = { "<Plug>(comment_toggle_linewise_current)", "Comment line" },
 			["<leader>ccb"] = { "<Plug>(comment_toggle_blockwise_current)", "Comment block" },
 		})
 
+		-- Debug commands
 		wk.register({
-			["<leader>c"] = { name = "+code" },
+			["<leader>cx"] = { name = "+debug" },
+			["<leader>cxt"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle Debugger" },
+			["<leader>cxb"] = { require("dap").toggle_breakpoint, "Add/Remove Breakpoint" },
+			["<leader>cxr"] = { require("dap").continue, "Run/Continue" },
+			["<leader>cxs"] = { require("dap").step_over, "Step Over" },
+			["<leader>cxi"] = { require("dap").step_into, "Step Into" },
+		})
+
+		wk.register({
 			["<leader>cc"] = { name = "+comment" },
 			["<leader>ccl"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment line" },
 			["<leader>ccb"] = { "<Plug>(comment_toggle_blockwise_visual)", "Comment block" },
@@ -71,6 +82,8 @@ return {
 		-- Misc
 		wk.register({
 			["<leader>h"] = { "<cmd>nohlsearch<cr>", "Remove search highlighting" },
+			["<leader>tl"] = { "<cmd>TodoTelescope<cr>", "Search Todo list" },
+			["<leader>sh"] = { "<cmd>Telescope help_tags<cr>", "Search Help" },
 		})
 
 		-- Harpoon Keymaps
@@ -81,7 +94,7 @@ return {
 				end,
 				"Harpoon current file",
 			},
-			["<leader>d"] = {
+			["<leader>r"] = {
 				function()
 					harpoon:list():remove()
 				end,
