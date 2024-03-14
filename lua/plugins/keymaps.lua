@@ -73,10 +73,10 @@ return {
 
     -- Navigate vim panes better
     wk.register({
-      ["<C-k>"] = { "<cmd>wincmd k<CR>", "Navigate to pane above" },
-      ["<C-j>"] = { "<cmd>wincmd j<CR>", "Navigate to pane below" },
-      ["<C-h>"] = { "<cmd>wincmd h<CR>", "Navigate to pane left" },
-      ["<C-l>"] = { "<cmd>wincmd l<CR>", "Navigate to pane right" },
+      ["<C-k>"] = { "<cmd>TmuxNavigateUp<CR>", "Navigate to pane above" },
+      ["<C-j>"] = { "<cmd>TmuxNavigateDown<CR>", "Navigate to pane below" },
+      ["<C-h>"] = { "<cmd>TmuxNavigateLeft<CR>", "Navigate to pane left" },
+      ["<C-l>"] = { "<cmd>TmuxNavigateRight<CR>", "Navigate to pane right" },
     })
 
     -- Misc
