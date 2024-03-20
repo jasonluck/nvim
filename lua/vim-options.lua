@@ -32,3 +32,8 @@ vim.opt.colorcolumn = "80"
 
 -- Always show sign column to stop buffer shift
 vim.opt.signcolumn = "yes"
+
+-- Set the conceal level
+-- This needs to be 1 or 2 in order for the obsidian plugin
+-- to work properly
+vim.opt.conceallevel = 2
