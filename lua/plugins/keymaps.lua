@@ -71,6 +71,15 @@ return {
       ["<leader>gtb"] = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle line blame" },
     })
 
+    -- Obsidian Keymaps
+    wk.register({
+      ["<leader>o"] = { name = "+obsidian" },
+      ["<leader>of"] = { "<cmd>ObsidianFollowLink<cr>", "Follow Link" },
+      ["<leader>ob"] = { "<cmd>ObsidianBackLinks<cr>", "Show Back Links" },
+      ["<leader>ot"] = { "<cmd>ObsidianTags<cr>", "Search Tags" },
+      ["<leader>od"] = { "<cmd>ObsidianToday<cr>", "Create/Open today's daily note" },
+    })
+
     -- Navigate vim panes better
     wk.register({
       ["<C-k>"] = { "<cmd>TmuxNavigateUp<CR>", "Navigate to pane above" },
