@@ -68,6 +68,7 @@ return {
 			["<leader>gd"] = { "<cmd>Gitsigns diffthis<cr>", "Diff file" },
 			["<leader>gc"] = { "<cmd>Telescope git_bcommits<cr>", "List commits for current buffer" },
 			["<leader>gs"] = { "<cmd>Telescope git_status<cr>", "Git status" },
+			["<leader>ga"] = { "<cmd>Telescope git_stash<cr>", "List stashes" },
 			["<leader>gt"] = { name = "+toggle" },
 			["<leader>gtd"] = { "<cmd>Gitsigns toggle_deleted<cr>", "Toggle deleted" },
 			["<leader>gtb"] = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle line blame" },
