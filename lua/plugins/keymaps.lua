@@ -84,6 +84,7 @@ return {
 			["<leader>ot"] = { "<cmd>ObsidianTags<cr>", "Search Tags" },
 			["<leader>od"] = { "<cmd>ObsidianToday<cr>", "Create/Open today's daily note" },
 			["<leader>on"] = { "<cmd>ObsidianNew<cr>", "New note" },
+			["<leader>oi"] = { "<cmd>ObsidianTemplate<cr>", "Insert template" },
 			["<leader>oc"] = { require("obsidian").util.toggle_checkbox, "Toggle Checkbox" },
 		})
 		wk.register({
