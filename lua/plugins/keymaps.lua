@@ -76,6 +76,15 @@ return {
 			["<leader>gtb"] = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle line blame" },
 		})
 
+		-- Terraform commands
+		wk.register({
+			["<leader>t"] = { name = "+terraform" },
+			["<leader>td"] = { name = "+docs" },
+			["<leader>tda"] = { "<cmd>Telescope terraform_doc full_name=hashicorp/aws<cr>", "Terraform Docs [AWS]" },
+			["<leader>tdz"] = { "<cmd>Telescope terraform_doc full_name=hashicorp/azure<cr>", "Terraform Docs [Azure]" },
+			["<leader>tdm"] = { "<cmd>Telescope terraform_doc modules<cr>", "Terraform Docs [Modules]" },
+		})
+
 		-- Obsidian Keymaps
 		wk.register({
 			["<leader>o"] = { name = "+obsidian" },
